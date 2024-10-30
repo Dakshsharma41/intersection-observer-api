@@ -1,0 +1,11 @@
+<!-- <p>product-list works!</p> -->
+
+<div #scrollContainer style="height: 80vh; overflow-y: auto; border: 1px solid #ccc;">
+    <div class="product">
+        @for (product of products; track product.id) {
+      <h3>{{ product.title }}</h3>
+      <!-- <p>{{ product.description }}</p> -->
+        }
+    </div>
+    
+  </div>
