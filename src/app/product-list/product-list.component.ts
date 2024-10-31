@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../product.service';
 
+
 @Component({
   selector: 'app-product-list',
   standalone: true,
@@ -14,8 +15,9 @@ export class ProductListComponent implements OnInit {
   limit = 20;
   isLoading = false;
   totalProducts = 0;
+  
 
-  @ViewChild('scrollContainer', { static: true }) scrollContainer!: ElementRef;
+   @ViewChild('scrollContainer', { static: true }) scrollContainer!: ElementRef;
 
 
   constructor(private productService: ProductService) { }
@@ -30,6 +32,7 @@ export class ProductListComponent implements OnInit {
   fetchTotalProducts(): void {
     this.productService.getTotalProducts().subscribe(data => {
       this.totalProducts = data;
+      
     });
   }
 

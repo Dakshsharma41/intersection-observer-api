@@ -1,11 +1,18 @@
-<!-- <p>product-list works!</p> -->
+<p>Products</p>
 
 <div #scrollContainer style="height: 80vh; overflow-y: auto; border: 1px solid #ccc;">
     <div class="product">
         @for (product of products; track product.id) {
       <h3>{{ product.title }}</h3>
-      <!-- <p>{{ product.description }}</p> -->
+      <p>{{ product.description }}</p>
         }
     </div>
+    <div class="loading">
+        @if (isLoading) {
+          <p>Loading...</p>
+        }
+      </div>
+     
+  
     
   </div>
